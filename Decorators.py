@@ -1,12 +1,16 @@
+from Main import Person
+
+
 def myDecorator(function):
 
-    def wrapper():
+    def wrapper(*args, **kwargs):
         print("I m decorating your function")
-        function()
+        function(*args, **kwargs)
 
     return wrapper
 
-def helloWorld():
-    print("Hello World")
+@myDecorator
+def helloWorld(Person):
+    print(f"Hello {Person}")
 
-myDecorator(helloWorld)
+helloWorld("Utsav")
