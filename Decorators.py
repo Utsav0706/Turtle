@@ -5,7 +5,7 @@ def myDecorator(function):
 
     def wrapper(*args, **kwargs):
         print("I m decorating your function")
-        function(*args, **kwargs)
+        return function(*args, **kwargs)
 
     return wrapper
 
@@ -13,4 +13,4 @@ def myDecorator(function):
 def helloWorld(Person):
     print(f"Hello {Person}")
 
-helloWorld("Utsav")
+print(helloWorld("Utsav"))
